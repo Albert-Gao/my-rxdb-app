@@ -7,7 +7,9 @@ import {
 import { RxDBDevModePlugin } from "rxdb/plugins/dev-mode";
 import { rxStorage } from "./rxStorage";
 
-addRxPlugin(RxDBDevModePlugin);
+if (process.env.NODE_ENV === "development") {
+  addRxPlugin(RxDBDevModePlugin);
+}
 
 const rxDBPromise = createRxDatabase<TcAppRxDBCollections>({
   name: "tc-app",

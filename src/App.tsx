@@ -8,7 +8,7 @@ function App() {
           await rxDB.users.create({});
         }}
       >
-        create user
+        create user with collection method
       </button>
     </div>
   );
